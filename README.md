@@ -1,108 +1,134 @@
 # Mini WhatsApp
 
-A WhatsApp-inspired chat management application built using **Node.js, Express.js, EJS, MongoDB and Mongoose**. This project demonstrates CRUD operations with persistent database storage.
+A WhatsApp-inspired chat application built using **Node.js, Express.js, EJS and MongoDB**. The application allows users to create, view, edit and delete chat messages with data stored persistently in MongoDB using Mongoose.
 
 ## Features
 
-- **Create Chats:** Add new conversations with sender, receiver and message details.
-- **View Chats:** Display all stored chats with sender, receiver, message and timestamp.
+- **Create Chats:** Add messages with sender, receiver and message content.
+- **View Chats:** Display all conversations with their details and timestamps.
 - **Edit Chats:** Update existing chat messages.
 - **Delete Chats:** Remove conversations from the database.
-- **Database Integration:** Store and manage chat records using MongoDB and Mongoose.
+- **MongoDB Integration:** Store chat records using Mongoose schemas and models.
+- **Sample Data:** Initialize the database with sample chat records.
 
 ## Tech Stack
 
-- **Backend:** Node.js, Express.js
-- **Frontend:** HTML, CSS, EJS
-- **Database:** MongoDB
-- **ODM:** Mongoose
-- **Other:** Method-Override
+| Technology | Purpose |
+|---|---|
+| Node.js | JavaScript runtime |
+| Express.js | Backend framework |
+| MongoDB | Database |
+| Mongoose | MongoDB object modeling |
+| EJS | Dynamic HTML rendering |
+| HTML & CSS | Frontend |
+| Method-Override | Support PUT and DELETE form requests |
 
 ## Project Structure
-MONGO3/
+
+```text
+mini-whatsapp/
 │
 ├── models/
 │   └── chat.js
+│
 ├── public/
 │   └── style.css
+│
 ├── views/
 │   ├── chats.ejs
 │   ├── edit.ejs
 │   └── new.ejs
+│
 ├── index.js
 ├── init.js
 ├── package.json
-└── package-lock.json
-
+├── package-lock.json
+├── .gitignore
+└── README.md
+```
 
 ## Installation & Setup
 
-1. Clone the repository:
+**1. Clone the repository**
 
 ```bash
 git clone YOUR_REPOSITORY_URL
 ```
 
-2. Navigate to the project directory:
+**2. Navigate to the project directory**
 
 ```bash
 cd mini-whatsapp
 ```
 
-3. Install dependencies:
+**3. Install dependencies**
 
 ```bash
 npm install
 ```
 
-4. Make sure MongoDB is running locally.
+**4. Start MongoDB**
 
-5. Start the application:
+Make sure your local MongoDB server is running.
+
+The application connects to:
+
+```text
+mongodb://127.0.0.1:27017/whatsapp
+```
+
+**5. Initialize sample data (optional)**
+
+```bash
+node init.js
+```
+
+This inserts 10 sample chat records into the database.
+
+**6. Start the application**
 
 ```bash
 node index.js
 ```
 
-6. Open in your browser:
+Open in your browser:
 
 ```text
 http://localhost:8080/chats
 ```
 
-## Database
+## Database Schema
 
-- Database Name: `whatsapp`
-- Collection: `chats`
+Each chat document contains the following fields:
 
-Each chat document contains:
-
-| Field | Description |
-|---|---|
-| from | Sender name |
-| to | Receiver name |
-| msg | Chat message |
-| created_at | Chat creation date and time |
+| Field | Type | Description |
+|---|---|---|
+| from | String | Sender name |
+| to | String | Receiver name |
+| msg | String | Chat message |
+| created_at | Date | Message creation timestamp |
 
 ## CRUD Operations
 
-| Operation | HTTP Method | Route |
+| Operation | Method | Endpoint |
 |---|---|---|
 | View all chats | GET | `/chats` |
-| Create chat form | GET | `/chats/new` |
-| Save new chat | POST | `/chats` |
-| Edit chat form | GET | `/chats/:id/edit` |
+| Display new chat form | GET | `/chats/new` |
+| Create chat | POST | `/chats` |
+| Display edit form | GET | `/chats/:id/edit` |
 | Update chat | PUT | `/chats/:id` |
 | Delete chat | DELETE | `/chats/:id` |
 
 ## Learning Outcomes
 
 - Implementing CRUD operations using Express.js.
-- Working with MongoDB through Mongoose.
-- Creating schemas and models.
-- Handling dynamic routes and request parameters.
-- Using EJS for dynamic page rendering.
-- Implementing PUT and DELETE methods using Method-Override.
+- Connecting Node.js applications with MongoDB.
+- Creating Mongoose schemas and models.
+- Performing database operations using Mongoose methods.
+- Handling dynamic routes and form submissions.
+- Rendering dynamic content using EJS.
+- Working with HTTP methods and Method-Override.
 
 ---
 
-**Developed as a Full Stack Development practice project.**
+**Built as a Full Stack Development practice project.**
