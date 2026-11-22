@@ -19,25 +19,21 @@ A WhatsApp-inspired chat management application built using **Node.js, Express.j
 - **Other:** Method-Override
 
 ## Project Structure
-
-```text
-mini-whatsapp/
+MONGO3/
 │
 ├── models/
 │   └── chat.js
-│
 ├── public/
 │   └── style.css
-│
 ├── views/
 │   ├── chats.ejs
-│   ├── new.ejs
-│   └── edit.ejs
-│
+│   ├── edit.ejs
+│   └── new.ejs
 ├── index.js
+├── init.js
 ├── package.json
-└── .gitignore
-```
+└── package-lock.json
+
 
 ## Installation & Setup
 
