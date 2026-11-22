@@ -1,0 +1,52 @@
+body{
+    margin: 20px;
+}
+.chat{
+    background-color: aliceblue;
+    border-radius: 15px;
+    width: 25%;
+}
+.msg{
+    background-color: dodgerblue;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 15px ;
+    margin: 5px;
+}
+
+.sender,.receiver{
+    font-size:  16px;
+    padding-left: 5px;
+}
+h1{
+    color: rgb(0, 255, 0);
+}
+.date{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 13px;
+    color: rgb(0, 100, 0);
+}
+
+.edit-btn{
+    background-color:white;
+    color: dodgerblue;
+    border: 1px solid dodgerblue;
+    border-radius: 3px;
+
+}
+
+.del-btn{
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+    border-radius: 3px;
+}
+
+.create-btn{
+    background-color: white;
+    color: dodgerblue;
+    border: 1px solid dodgerblue;
+    border-radius: 3px;
+}
